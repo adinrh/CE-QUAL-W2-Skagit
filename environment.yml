@@ -1,0 +1,13 @@
+name: ssmc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.2
+  - ipykernel # required for jupyter notebook in VS Code
+  - scipy
+  - numpy
+  - dataretrieval
+#   - pip  # if you need more packages installed from pip 
+#   - pip:
+#     - foo

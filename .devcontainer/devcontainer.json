@@ -9,8 +9,8 @@
 	"features": {
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers-extra/features/bash-command:1": {},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
+		"ghcr.io/devcontainers-contrib/features/coverage-py:2": {},
+		"ghcr.io/devcontainers/features/anaconda:1": {}
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -21,16 +21,30 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "python --version",
-	"postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "conda init",
 
 	// Configure tool-specific properties.
 	"customizations": {
     	// Configure properties specific to VS Code.
     	"vscode": {
-      		// Add the IDs of extensions you want installed when the container is created.
-      		"extensions": [
-        		"streetsidesoftware.code-spell-checker"
-      		]
+			"settings": {
+				"python.defaultInterpreterPath": "/opt/conda/envs/ssmc"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.debugpy",
+//				"donjayamanne.python-extension-pack",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.datawrangler",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"GitHub.codespaces",
+				"ms-toolsai.jupyter-keymap",
+				"ms-azuretools.vscode-docker",
+				"DavidAnson.vscode-markdownlint",
+				"streetsidesoftware.code-spell-checker"
+
+			]
     	}
   	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
