@@ -8,6 +8,7 @@ dependencies:
   - scipy
   - numpy
   - dataretrieval
+  - hydrotools
 #   - pip  # if you need more packages installed from pip 
 #   - pip:
 #     - foo
